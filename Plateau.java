@@ -29,7 +29,7 @@ public class Plateau {
         return numCols;
     }                   
 
-    public Case getCase(int li, int col) {
+    public Case getPlato(int li, int col) {
         return plato[li][col];
     }
 
@@ -84,6 +84,11 @@ public class Plateau {
         }
     public static void main(String[] args) {
         Plateau p = new Plateau(5, 5);
+        StarMario s = new StarMario(0, 0);
+        Zombie1 z = new Zombie1(0, 3, 0);
+        p.placeMario(s, 0, 1);
+        p.placeZombie(z, 0, 3);
         p.affiche();
+        System.out.println(s.peutAttaquer(p));
     }
 }
