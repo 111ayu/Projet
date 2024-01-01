@@ -27,9 +27,12 @@ public class Plateau {
     }
     public int getNumCols() {
         return numCols;
+    }
+    public Case[][] getPlato(){
+        return this.plato;
     }                   
 
-    public Case getPlato(int li, int col) {
+    public Case getCase(int li, int col) {
         return plato[li][col];
     }
 
@@ -38,9 +41,13 @@ public class Plateau {
     }
 
     public void placeMario(Mario m, int li, int col) {
+        m.getInfoActuelle().setPosX(li);
+        m.getInfoActuelle().setPosY(col);
         plato[li][col].setMario(m);
     }
     public void placeZombie(Zombie z, int li, int col) {
+        z.getInfoActuelle().setPosX(li);
+        z.getInfoActuelle().setPosY(col); 
         plato[li][col].setZombie(z);
     }
     public void removeMario(int li, int col) {
@@ -84,10 +91,10 @@ public class Plateau {
         }
     public static void main(String[] args) {
         Plateau p = new Plateau(5, 5);
-        StarMario s = new StarMario(0, 0);
-        Zombie1 z = new Zombie1(0, 3, 0);
+        StarMario s = new StarMario();
+        Zombie1 z = new Zombie1( 0);
         p.placeMario(s, 0, 1);
-        p.placeZombie(z, 0, 3);
+        p.placeZombie(z, 2, 3);
         p.affiche();
         System.out.println(s.peutAttaquer(p));
     }

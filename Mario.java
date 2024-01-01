@@ -23,7 +23,7 @@ public abstract class Mario extends Personnage {
     public boolean peutAttaquer(Plateau p){
         int [] pos = this.getPosition();
         for(int i=pos[1]; i<p.getNumCols();i++){
-            if(p.getPlato(pos[0], i).contientZombie()){
+            if(p.getCase(pos[0], i).contientZombie()){
                 return true;
             }
         }
