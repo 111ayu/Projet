@@ -2,6 +2,7 @@ public class InformationMario {
     private int attaque;
     private int defense;
     private final int prix;
+    private int test = 0;
     private int vie;
     private int posX;
     private int posY;
