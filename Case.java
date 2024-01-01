@@ -15,11 +15,17 @@ public class Case {
     }
 
     public boolean contientMario() {
+        if(p!=null){
             return p.getTour();
+        }
+        return false;
     }
 
     public boolean contientZombie() {
+        if (p!=null){
             return !p.getTour();
+        }
+        return false;
     }
 
     public Personnage getPersonnage() {
