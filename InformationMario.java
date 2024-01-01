@@ -19,6 +19,8 @@ public class InformationMario {
         return this.attaque;
     }
     //test githubbb
+    //test 2
+    
     public int getDefense(){ 
         return this.defense;
     }
