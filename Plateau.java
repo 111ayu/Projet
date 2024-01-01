@@ -16,8 +16,8 @@ public class Plateau {
             for (int col = 0; col < numCols; col++) {
                 if(col==0){
                     plato[li][col] = new Case(li, col,w);
-                }
-                plato[li][col] = new Case(li, col);
+                }else{
+                plato[li][col] = new Case(li, col);}
             }
         }
     }
@@ -85,6 +85,5 @@ public class Plateau {
     public static void main(String[] args) {
         Plateau p = new Plateau(5, 5);
         p.affiche();
-
     }
 }
