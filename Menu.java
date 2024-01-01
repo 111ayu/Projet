@@ -63,7 +63,7 @@ public class Menu {
 
     public void afficherCatalogue(){
         BasicMario BasicMario0= new BasicMario(-1,-1);
-        WallBrick WallBrick0= new WallBrick(-1,-1);
+        WallBrick WallBrick0= new WallBrick();
         FireMario FireMario0 = new FireMario(-1,-1);
         BigMario BigMario0 =new BigMario(-1,-1);
         StarMario StarMario0 = new StarMario(-1, -1);
