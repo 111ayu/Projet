@@ -12,14 +12,12 @@ public class InformationMario {
         this.posX = posX;
         this.posY = posY;
         this.vie = vie;
-      //  this.prix = prix;
+        this.prix = prix;
     }
 
     public int getAttaque(){
         return this.attaque;
     }
-    //test githubbb
-    //test 2
 
     public int getDefense(){ 
         return this.defense;
