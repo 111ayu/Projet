@@ -41,14 +41,26 @@ public class Plateau {
     }
 
     public void placeMario(Mario m, int li, int col) {
-        m.getInfoActuelle().setPosX(li);
-        m.getInfoActuelle().setPosY(col);
-        plato[li][col].setMario(m);
-    }
+        if(this.getCase(li, col).contientMario()){
+            System.out.println("Il y a déjà une tour placé dans la case ["+li+","+col+"]");
+        }
+        if(this.getCase(li, col).contientZombie()){
+            System.out.println("Impossible !Un Zombie se trouve dans la case ["+li+","+col+"]");
+        }
+    
+        if(!this.getCase(li, col).contientMario()&&!this.getCase(li, col).contientZombie()){
+            m.getInfoActuelle().setPosX(li);
+            m.getInfoActuelle().setPosY(col);
+            plato[li][col].setMario(m);
+        }
+    }    
+        
     public void placeZombie(Zombie z, int li, int col) {
-        z.getInfoActuelle().setPosX(li);
-        z.getInfoActuelle().setPosY(col); 
-        plato[li][col].setZombie(z);
+        if(!this.getCase(li, col).contientMario()&&!this.getCase(li, col).contientZombie()){
+            z.getInfoActuelle().setPosX(li);
+            z.getInfoActuelle().setPosY(col); 
+            plato[li][col].setZombie(z);
+        }
     }
     public void removeMario(int li, int col) {
         plato[li][col].setMario(null);
@@ -93,8 +105,8 @@ public class Plateau {
         Plateau p = new Plateau(5, 5);
         StarMario s = new StarMario();
         Zombie1 z = new Zombie1( 0);
-        p.placeMario(s, 0, 1);
-        p.placeZombie(z, 2, 3);
+        p.placeMario(s, 0, 0);
+        p.placeZombie(z, 0, 1);
         p.affiche();
         System.out.println(s.peutAttaquer(p));
     }
